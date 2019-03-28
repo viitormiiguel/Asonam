@@ -5,14 +5,18 @@ captain = "Data/captain-tweets/"
 avengers = "Data/avengers-tweets/no_war/"
 
 def run(c, d):
-    document_text = open(c + d + '.txt', 'r')
-    for dt in document_text.readlines():
-        t = dt.split()
-        txt = t[0][1:len(t[0])-1]
-        txt = nltk.word_tokenize(txt)
-        # print(txt)
-        print(nltk.pos_tag(txt))
-        # print(dt)
+        document_text = open(c + d + '.txt', 'r')
+        arrayWords = []
+        for dt in document_text.readlines():
+                t = dt.split()
+                txt = t[1][0:len(t[1])-4]
+                t1 = t[0][2:len(t[0])-1]
+                t1 = t1.replace("'","")
+                if txt.find('JJ') == 1: 
+                        arrayWords.append(t1)
+                        
+        print(d)
+        print(arrayWords)
 
 run(captain, 'tf-mpos')
 run(captain, 'tf-pos')
