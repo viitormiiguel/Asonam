@@ -36,7 +36,7 @@ def runProcess(c, d, e):
     text_string = document_text.read().lower()
     text_string = preProcess(text_string)
     match_pattern = re.findall(r'\b[a-z]{3,15}\b', text_string)
-    print(match_pattern)
+    # print(match_pattern)
     f1 = open(c + e + '.txt', 'a+')
 
     for word in match_pattern:
@@ -44,14 +44,13 @@ def runProcess(c, d, e):
         count = frequency.get(word,0)
         frequency[word] = count + 1
         
-        
-    # frequency_list = frequency.keys()
+    frequency_list = frequency.keys()
     
-    # for words in frequency_list:
-    #     if frequency[words] > 50:
-    #         txt = nltk.word_tokenize(words)
-    #         f1.write(str(nltk.pos_tag(txt)) + ',' + str(frequency[words]) + '\n')
-    # f1.close()
+    for words in frequency_list:
+        if frequency[words] > 50:
+            txt = nltk.word_tokenize(words)
+            f1.write(str(nltk.pos_tag(txt)) + ',' + str(frequency[words]) + '\n')
+    f1.close()
 
 # runProcess(c1, 'result_aquaman_youtube_mneg', 'tf-mneg')
 # runProcess(c1, 'result_aquaman_youtube_neg', 'tf-neg')
@@ -83,7 +82,7 @@ def runProcess(c, d, e):
 # runProcess(c2, 'result_aquaman_16_17/result_aquaman_16_17_pos', 'result_aquaman_16_17/tf-pos')
 # runProcess(c2, 'result_aquaman_16_17/result_aquaman_16_17_mpos', 'result_aquaman_16_17/tf-mpos')
 
-runProcess(c3, 'result_captain_youtube_mneg', 'tf-mneg')
+# runProcess(c3, 'result_captain_youtube_mneg', 'tf-mneg')
 # runProcess(c3, 'result_captain_youtube_neg', 'tf-neg')
 # runProcess(c3, 'result_captain_youtube_neu', 'tf-neu')
 # runProcess(c3, 'result_captain_youtube_pos', 'tf-pos')
