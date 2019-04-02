@@ -14,9 +14,16 @@ people = ['Iron Man', 'Thor', 'Hulk', 'Captain America', 'Black Widow', 'War Mac
 
 vip = ['Iron Man', 'Thor', 'Hulk', 'Captain America', 'Black Widow', 'Doctor Strange', 'Spider-Man', 'Gamora', 'Thanos']
 
-def getImportanWords(c, d, p, q):
+aq = ['Arthur', 'Mera', 'Vulko', 'King Orm', 'Atlanna', 'King Nereus', 'Manta', 'Tom Curry', 'Captain Murk', 'Jesse', 'Dr. Stephen Shin',
+'King Atlan', 'Cargo Pilot']
+
+cap = ['Carol Danvers', 'Vers', 'Captain Marvel', 'Nick Fury', 'Talos', 'Keller', 'Yon-Rogg', 'Supreme Intelligence', 'Dr. Wendy Lawson', 'Maria Rambeau',
+'Agent Coulson', 'Bron-Char', 'Minn-Erva', 'Att-Lass', 'Korath', 'Ronan', 'Soh-Larr', 'Norex', 'Monica Rambeau']
+
+def getImportanWords(c, d, p, q, vip):
         document_text = open(c + d + '.txt', 'r')
         arrayWords = []
+        f1 = open(c + 'oc-pos-yt.txt', 'a+')
         for dt in document_text.readlines():
                 t = dt.split()
                 txt = t[1][0:len(t[1])-4]
@@ -32,13 +39,16 @@ def getImportanWords(c, d, p, q):
                                 arrayWords.append(t1)
 
         contagem = 0
-        print('\n')
-        print(q)
+        # print('\n')
+        # print(q)
         for word in arrayWords:
                 for texto in p:
-                        if word in texto:
+                        if word in texto and vip in texto:
                                 contagem += 1        
-                print('Palavra: ' + word + ' contagem ' + str(contagem))
+                # print('Palavra: ' + word + ' contagem ' + str(contagem) + ' personagem: ' + vip)
+                resp = 'Palavra: ' + word + ' contagem ' + str(contagem) + ' personagem: ' + vip + '\n'
+                f1.write(resp)
+        f1.close
 
         return arrayWords
 
@@ -46,7 +56,8 @@ def getImportanWords(c, d, p, q):
 def runProcess(c, d, d1, e, f):
         doc = open(c + d + '.txt', 'r')
         arrayW = []
-        for p in vip:
+        # varre array de personagens
+        for p in cap:
                 count = 0
                 p = p.lower()                
                 for dt in doc.readlines():
@@ -58,9 +69,18 @@ def runProcess(c, d, d1, e, f):
                                 final = dt 
                                 # print('Contagem ' + str(count))
                                 arrayW.append(final)
-        # print(arrayW)
-        getImportanWords(avengers, d1 + e, arrayW, f)
+                # print(arrayW)
+                getImportanWords(c, d1 + e, arrayW, f, p)
         return arrayW
 
-runProcess(avengers, 'vingadores_2018_04_22_ing_sent/vingadores_2018_04_22_ing_sent_mneg', 'vingadores_2018_04_22_ing_sent/', 'vingadores_2018_04_22_tf-mneg', 'Muito Negativo')
-runProcess(avengers, 'vingadores_2018_04_30_ing_sent/vingadores_2018_04_30_ing_sent_mneg', 'vingadores_2018_04_30_ing_sent/', 'vingadores_2018_04_30_tf-mpos', 'Muito Positivo')
+# runProcess(avengers, 'vingadores_2018_04_30_ing_sent/vingadores_2018_04_30_ing_sent_mneg', 'vingadores_2018_04_30_ing_sent/', 'vingadores_2018_04_30_tf-mneg', 'Muito Negativo')
+# runProcess(avengers, 'vingadores_2018_04_30_ing_sent/vingadores_2018_04_30_ing_sent_mpos', 'vingadores_2018_04_30_ing_sent/', 'vingadores_2018_04_30_tf-mpos', 'Muito Positivo')
+
+# runProcess(aquaman, 'file_results_twitter/result_aquaman_09_13/result_aquaman_09_13_mpos', 'file_results_twitter/result_aquaman_09_13/', 'tf-mpos', 'Muito Positivo')
+# runProcess(aquaman, 'file_results_twitter/result_aquaman_09_13/result_aquaman_09_13_mneg', 'file_results_twitter/result_aquaman_09_13/', 'tf-mneg', 'Muito Neg')
+
+# runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mneg', 'file_results_youtube/', 'tf-mneg', 'Muito Negativo')
+# runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mpos', 'file_results_youtube/', 'tf-mpos', 'Muito Positivo')
+
+# runProcess(captain, 'result_captain_youtube_mneg', '', 'tf-mneg', 'Muito Negativo')
+runProcess(captain, 'result_captain_youtube_mpos', '', 'tf-mpos', 'Muito Positivo')
