@@ -9,7 +9,8 @@ import csv
 analyser = SentimentIntensityAnalyzer()
 
 # Busca arquivos 
-aquaman = "C:\\Users\\vitor\\Documents\\Python Projetcs\\AnalysisMoviews\\Data\\aquaman-tweets\\aquaman\\"
+aquaman = "Data/aquaman-tweets/aquaman/"
+captain = "Data/captain-tweets/"
 
 def print_sentiment_scores(sentence):
     snt = analyser.polarity_scores(sentence)
@@ -28,11 +29,11 @@ def print_sentiment_scores(sentence):
     return str(classific), str(sentence), str(snt['compound'])
 
 def getText(arquivo):
-    with open(aquaman + arquivo, 'r', encoding='utf-8') as lines:
+    with open(captain + arquivo, 'r', encoding='utf-8') as lines:
         reader = csv.reader(lines)
         next(reader)
         dataInfo = [r for r in reader]
-    with open(aquaman + 'result_' + arquivo, mode='w', encoding="utf8") as fc:
+    with open(captain + 'result_' + arquivo, mode='w', encoding="utf8") as fc:
         for t in dataInfo:
             try:
                 x = 'null'
@@ -44,8 +45,12 @@ def getText(arquivo):
                 x = 'null'
    
 
-getText('aquaman_03_09.csv')
-getText('aquaman_09_13.csv')
-getText('aquaman_14_15.csv')
-getText('aquaman_16_17.csv')
+# getText('aquaman_03_09.csv')
+# getText('aquaman_09_13.csv')
+# getText('aquaman_14_15.csv')
+# getText('aquaman_16_17.csv')
 
+getText('captainmarvel_03-10_03-12.csv')
+getText('captainmarvel_03-13.csv')
+getText('captainmarvel_03-14_03-15.csv')
+getText('captainmarvel_03-18.csv')
