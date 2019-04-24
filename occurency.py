@@ -23,7 +23,7 @@ cap = ['Carol Danvers', 'Vers', 'Captain Marvel', 'Nick Fury', 'Talos', 'Keller'
 def getImportanWords(c, d, p, q, vip):
         document_text = open(c + d + '.txt', 'r')
         arrayWords = []
-        f1 = open(c + 'oc-pos-yt.txt', 'a+')
+        f1 = open(c + 'occ-neg.txt', 'a+')
         for dt in document_text.readlines():
                 t = dt.split()
                 txt = t[1][0:len(t[1])-4]
@@ -46,7 +46,8 @@ def getImportanWords(c, d, p, q, vip):
                         if word in texto and vip in texto:
                                 contagem += 1        
                 # print('Palavra: ' + word + ' contagem ' + str(contagem) + ' personagem: ' + vip)
-                resp = 'Palavra: ' + word + ' contagem ' + str(contagem) + ' personagem: ' + vip + '\n'
+                # resp = 'Palavra: ' + word + ' contagem ' + str(contagem) + ' personagem: ' + vip + '\n'
+                resp = word + ';' + str(contagem) + ';' + vip + '\n'
                 f1.write(resp)
         f1.close
 
@@ -82,5 +83,5 @@ def runProcess(c, d, d1, e, f):
 # runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mneg', 'file_results_youtube/', 'tf-mneg', 'Muito Negativo')
 # runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mpos', 'file_results_youtube/', 'tf-mpos', 'Muito Positivo')
 
-# runProcess(captain, 'result_captain_youtube_mneg', '', 'tf-mneg', 'Muito Negativo')
-runProcess(captain, 'result_captain_youtube_mpos', '', 'tf-mpos', 'Muito Positivo')
+runProcess(captain, 'result_captain_youtube_mneg', '', 'tf-mneg', 'Muito Negativo')
+# runProcess(captain, 'result_captain_youtube_mpos', '', 'tf-mpos', 'Muito Positivo')
