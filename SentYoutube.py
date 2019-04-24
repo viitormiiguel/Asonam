@@ -12,6 +12,7 @@ analyser = SentimentIntensityAnalyzer()
 
 aquaman = "C:\\Users\\vitor\\Documents\\Python Projetcs\\AnalysisMoviews\\Data\\aquaman-tweets\\aquaman\\"
 captain = "C:\\Users\\vitor\\Documents\\Python Projetcs\\AnalysisMoviews\\Data\\captain-tweets\\"
+avengers = "Data/avengers-tweets/no_war/"
 
 def print_sentiment_scores(sentence):
     snt = analyser.polarity_scores(sentence)
@@ -44,6 +45,6 @@ def getYoutube(path, arquivo, name):
                 x = 'null'
             
 
-getYoutube(aquaman, 'json_youtube_aquamen_com.json', 'aquaman')
-getYoutube(captain, 'json_youtube_captain_com.json', 'captain')
-
+# getYoutube(aquaman, 'json_youtube_aquamen_com.json', 'aquaman')
+# getYoutube(captain, 'json_youtube_captain_com.json', 'captain')
+getYoutube(avengers, 'json_youtube_avengers_com.json', 'avengers')
