@@ -20,23 +20,29 @@ aq = ['Arthur', 'Mera', 'Vulko', 'King Orm', 'Atlanna', 'King Nereus', 'Manta', 
 cap = ['Carol Danvers', 'Vers', 'Captain Marvel', 'Nick Fury', 'Talos', 'Keller', 'Yon-Rogg', 'Supreme Intelligence', 'Dr. Wendy Lawson', 'Maria Rambeau',
 'Agent Coulson', 'Bron-Char', 'Minn-Erva', 'Att-Lass', 'Korath', 'Ronan', 'Soh-Larr', 'Norex', 'Monica Rambeau']
 
-def getImportanWords(c, d, p, q, vip):
+def getImportanWords(c, d, p, q, vip, g):
         document_text = open(c + d + '.txt', 'r')
         arrayWords = []
-        f1 = open(c + 'occ-neg.txt', 'a+')
+        f1 = open(c + 'oc-tw-captain-' +  g + '.txt', 'a+')
         for dt in document_text.readlines():
                 t = dt.split()
-                txt = t[1][0:len(t[1])-4]
-                t1 = t[0][2:len(t[0])-1]
-                t1 = t1.replace("'","")
+                # print(t)
+                try: 
+                        x = 'null'
+                        if t: 
+                                txt = t[1][0:len(t[1])-4]
+                                t1 = t[0][2:len(t[0])-1]
+                                t1 = t1.replace("'","")
 
-                t2 = str(t[1][5:])
-                t2 = t2[t2.find(','):]
-                t2 = t2[1:]
+                                t2 = str(t[1][5:])
+                                t2 = t2[t2.find(','):]
+                                t2 = t2[1:]
 
-                if txt.find('JJ') == 1: 
-                        if int(t2) > 100:
-                                arrayWords.append(t1)
+                                if txt.find('JJ') == 1: 
+                                        if int(t2) > 100:
+                                                arrayWords.append(t1)
+                except IndexError:
+                        x = 'null'
 
         contagem = 0
         # print('\n')
@@ -54,13 +60,13 @@ def getImportanWords(c, d, p, q, vip):
         return arrayWords
 
 
-def runProcess(c, d, d1, e, f):
+def runProcess(c, d, d1, e, f, g):
         doc = open(c + d + '.txt', 'r')
         arrayW = []
         # varre array de personagens
         for p in cap:
                 count = 0
-                p = p.lower()                
+                p = p.lower()
                 for dt in doc.readlines():
                         # d = dt.split()
                         # print(dt)
@@ -70,8 +76,7 @@ def runProcess(c, d, d1, e, f):
                                 final = dt 
                                 # print('Contagem ' + str(count))
                                 arrayW.append(final)
-                # print(arrayW)
-                getImportanWords(c, d1 + e, arrayW, f, p)
+                getImportanWords(c, d1 + e, arrayW, f, p, g)
         return arrayW
 
 # runProcess(avengers, 'vingadores_2018_04_30_ing_sent/vingadores_2018_04_30_ing_sent_mneg', 'vingadores_2018_04_30_ing_sent/', 'vingadores_2018_04_30_tf-mneg', 'Muito Negativo')
@@ -83,5 +88,36 @@ def runProcess(c, d, d1, e, f):
 # runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mneg', 'file_results_youtube/', 'tf-mneg', 'Muito Negativo')
 # runProcess(aquaman, 'file_results_youtube/result_aquaman_youtube_mpos', 'file_results_youtube/', 'tf-mpos', 'Muito Positivo')
 
-runProcess(captain, 'result_captain_youtube_mneg', '', 'tf-mneg', 'Muito Negativo')
+# runProcess(captain, 'result_captain_youtube_mneg', '', 'tf-mneg', 'Muito Negativo')
+# runProcess(captain, 'result_captain_youtube_neg', '', 'tf-neg', 'Negativo')
+# runProcess(captain, 'result_captain_youtube_pos', '', 'tf-pos', 'Positivo')
 # runProcess(captain, 'result_captain_youtube_mpos', '', 'tf-mpos', 'Muito Positivo')
+
+# runProcess(avengers, 'result_avengers_youtube_mneg', '', 'result_avengers_youtube_tf-mneg', 'Muito Negativo')
+# runProcess(avengers, 'result_avengers_youtube_mpos', '', 'result_avengers_youtube_tf-mpos', 'Muito Positivo')
+# runProcess(avengers, 'result_avengers_youtube_pos', '', 'result_avengers_youtube_tf-pos', 'Positivo')
+# runProcess(avengers, 'result_avengers_youtube_neg', '', 'result_avengers_youtube_tf-neg', 'Negativo')
+
+# runProcess(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mneg', '', 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_tf-mneg', 'Muito Negativo', 'mneg')
+# runProcess(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neg', '', 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_tf-neg', 'Negativo', 'neg')
+# runProcess(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neu', '', 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_tf-neu', 'Neutro', 'neu')
+# runProcess(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_pos', '', 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_tf-pos', 'Positivo', 'pos')
+# runProcess(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mpos', '', 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_tf-mpos', 'Muito Positivo', 'mpos')
+
+# runProcess(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mneg', '', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-mneg', 'Muito Negativo', 'mneg')
+# runProcess(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neg', '', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-neg', 'Negativo', 'neg')
+# runProcess(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neu', '', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-neu', 'Neutro', 'neu')
+# runProcess(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_pos', '', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-pos', 'Positivo', 'pos')
+# runProcess(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mpos', '', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-mpos', 'Muito Positivo', 'mpos')
+
+# runProcess(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mneg', '', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-mneg', 'Muito Negativo', 'mneg')
+# runProcess(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neg', '', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-neg', 'Negativo', 'neg')
+# runProcess(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neu', '', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-neu', 'Neutro', 'neu')
+# runProcess(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_pos', '', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-pos', 'Positivo', 'pos')
+# runProcess(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mpos', '', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-mpos', 'Muito Positivo', 'mpos')
+
+# runProcess(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mneg', '', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-mneg', 'Muito Negativo', 'mneg')
+# runProcess(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neg', '', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-neg', 'Negativo', 'neg')
+# runProcess(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neu', '', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-neu', 'Neutro', 'neu')
+# runProcess(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_pos', '', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-pos', 'Positivo', 'pos')
+# runProcess(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mpos', '', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-mpos', 'Muito Positivo', 'mpos')

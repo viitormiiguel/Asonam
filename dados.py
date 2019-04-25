@@ -14,12 +14,12 @@ captain = "Data/captain-tweets/"
 avengers = "Data/avengers-tweets/no_war/"
 
 def resultados(path, arquivo, novo):
-    dados = open(path + arquivo + '.csv', 'r', encoding='utf8')
-    f1 = open(path + arquivo + '_mpos.txt', 'w+', encoding='utf8')
-    f2 = open(path + arquivo + '_pos.txt', 'w+', encoding='utf8')
-    f3 = open(path + arquivo + '_neu.txt', 'w+', encoding='utf8')
-    f4 = open(path + arquivo + '_neg.txt', 'w+', encoding='utf8')
-    f5 = open(path + arquivo + '_mneg.txt', 'w+', encoding='utf8')
+    dados = open(path + arquivo + '.csv', 'r')
+    f1 = open(path + arquivo + '_mpos.txt', 'w+')
+    f2 = open(path + arquivo + '_pos.txt', 'w+')
+    f3 = open(path + arquivo + '_neu.txt', 'w+')
+    f4 = open(path + arquivo + '_neg.txt', 'w+')
+    f5 = open(path + arquivo + '_mneg.txt', 'w+')
     for t in dados.readlines():
         if t:
             x = '"' + t + '"'
@@ -40,6 +40,8 @@ def resultados(path, arquivo, novo):
     f4.close()
     f5.close()
 
+resultados(avengers, "result_avengers_youtube", 'null')
+
 # resultados(aquaman, "result_aquaman_youtube", 'file_results_youtube/')
 # resultados(captain, "result_captain_youtube", 'file_results_youtube/')
 
@@ -54,7 +56,7 @@ def resultados(path, arquivo, novo):
 # resultados(captain, "result_captainmarvel_03-18", 'null')
 
 def runNumbers(c, d, e, f):
-    document_text = open(c + d + '.txt', 'r', encoding="utf8")
+    document_text = open(c + d + '.txt', 'r')
     count = 0
     for dt in document_text.readlines():
         # print(dt)
@@ -185,27 +187,32 @@ def runNumbers(c, d, e, f):
 # runNumbers(avengers, 'vingadores_2018_05_04_ing_sent/vingadores_2018_05_04_ing_sent_pos','positivo', 'vingadores_2018_05_04')
 # runNumbers(avengers, 'vingadores_2018_05_04_ing_sent/vingadores_2018_05_04_ing_sent_mpos',  'muito positivo','vingadores_2018_05_04')
 
-runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mneg', 'muito negativo', 'result_captainmarvel_03-10_03-12')
-runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neg', 'negativo', 'result_captainmarvel_03-10_03-12')
-runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neu', 'neutro', 'result_captainmarvel_03-10_03-12')
-runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_pos', 'positivo', 'result_captainmarvel_03-10_03-12')
-runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mpos', 'muito positivo', 'result_captainmarvel_03-10_03-12')
+# runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mneg', 'muito negativo', 'result_captainmarvel_03-10_03-12')
+# runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neg', 'negativo', 'result_captainmarvel_03-10_03-12')
+# runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neu', 'neutro', 'result_captainmarvel_03-10_03-12')
+# runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_pos', 'positivo', 'result_captainmarvel_03-10_03-12')
+# runNumbers(captain, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mpos', 'muito positivo', 'result_captainmarvel_03-10_03-12')
 
-runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mneg', 'muito negativo', 'result_captainmarvel_03-13')
-runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neg', 'negativo', 'result_captainmarvel_03-13')
-runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neu', 'neutro', 'result_captainmarvel_03-13')
-runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_pos', 'positivo', 'result_captainmarvel_03-13')
-runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mpos', 'muito positivo', 'result_captainmarvel_03-13')
+# runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mneg', 'muito negativo', 'result_captainmarvel_03-13')
+# runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neg', 'negativo', 'result_captainmarvel_03-13')
+# runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neu', 'neutro', 'result_captainmarvel_03-13')
+# runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_pos', 'positivo', 'result_captainmarvel_03-13')
+# runNumbers(captain, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mpos', 'muito positivo', 'result_captainmarvel_03-13')
 
-runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mneg', 'muito negativo', 'result_captainmarvel_03-14_03-15')
-runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neg', 'negativo', 'result_captainmarvel_03-14_03-15')
-runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neu', 'neutro', 'result_captainmarvel_03-14_03-15')
-runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_pos', 'positivo', 'result_captainmarvel_03-14_03-15')
-runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mpos', 'muito positivo', 'result_captainmarvel_03-14_03-15')
+# runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mneg', 'muito negativo', 'result_captainmarvel_03-14_03-15')
+# runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neg', 'negativo', 'result_captainmarvel_03-14_03-15')
+# runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neu', 'neutro', 'result_captainmarvel_03-14_03-15')
+# runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_pos', 'positivo', 'result_captainmarvel_03-14_03-15')
+# runNumbers(captain, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mpos', 'muito positivo', 'result_captainmarvel_03-14_03-15')
 
-runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mneg', 'muito negativo', 'result_captainmarvel_03-18')
-runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neg', 'negativo', 'result_captainmarvel_03-18')
-runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neu', 'neutro', 'result_captainmarvel_03-18')
-runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_pos', 'positivo', 'result_captainmarvel_03-18')
-runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mpos', 'muito positivo', 'result_captainmarvel_03-18')
+# runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mneg', 'muito negativo', 'result_captainmarvel_03-18')
+# runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neg', 'negativo', 'result_captainmarvel_03-18')
+# runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neu', 'neutro', 'result_captainmarvel_03-18')
+# runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_pos', 'positivo', 'result_captainmarvel_03-18')
+# runNumbers(captain, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mpos', 'muito positivo', 'result_captainmarvel_03-18')
 
+runNumbers(avengers, 'result_avengers_youtube_mneg', 'muito negativo', 'Youtube')
+runNumbers(avengers, 'result_avengers_youtube_neg', 'negativo', 'Youtube')
+runNumbers(avengers, 'result_avengers_youtube_neu', 'neutro', 'Youtube')
+runNumbers(avengers, 'result_avengers_youtube_pos', 'positivo', 'Youtube')
+runNumbers(avengers, 'result_avengers_youtube_mpos', 'muito positivo', 'Youtube')

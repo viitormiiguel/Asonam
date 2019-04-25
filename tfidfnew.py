@@ -171,3 +171,33 @@ def runProcess(c, d, e):
 # runProcess(c4, 'vingadores_2018_05_04_ing_sent/vingadores_2018_05_04_ing_sent_neu', 'vingadores_2018_05_04_tf-neu')
 # runProcess(c4, 'vingadores_2018_05_04_ing_sent/vingadores_2018_05_04_ing_sent_pos', 'vingadores_2018_05_04_tf-pos')
 # runProcess(c4, 'vingadores_2018_05_04_ing_sent/vingadores_2018_05_04_ing_sent_mpos', 'vingadores_2018_05_04_tf-mpos')
+
+# runProcess(c4, 'result_avengers_youtube_mpos', 'result_avengers_youtube_tf-mpos')
+# runProcess(c4, 'result_avengers_youtube_pos', 'result_avengers_youtube_tf-pos')
+# runProcess(c4, 'result_avengers_youtube_neu', 'result_avengers_youtube_tf-neu')
+# runProcess(c4, 'result_avengers_youtube_neg', 'result_avengers_youtube_tf-neg')
+# runProcess(c4, 'result_avengers_youtube_mneg', 'result_avengers_youtube_tf-mneg')
+
+# runProcess(c3, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mpos', 'result_captainmarvel_03-10_03-12_tf-mpos')
+# runProcess(c3, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_pos', 'result_captainmarvel_03-10_03-12_tf-pos')
+# runProcess(c3, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neu', 'result_captainmarvel_03-10_03-12_tf-neu')
+# runProcess(c3, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_neg', 'result_captainmarvel_03-10_03-12_tf-neg')
+# runProcess(c3, 'result_captainmarvel_03-10_03-12/result_captainmarvel_03-10_03-12_mneg', 'result_captainmarvel_03-10_03-12_tf-mneg')
+
+# runProcess(c3, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mpos', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-mpos')
+# runProcess(c3, 'result_captainmarvel_03-13/result_captainmarvel_03-13_pos', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-pos')
+# runProcess(c3, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neu', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-neu')
+# runProcess(c3, 'result_captainmarvel_03-13/result_captainmarvel_03-13_neg', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-neg')
+# runProcess(c3, 'result_captainmarvel_03-13/result_captainmarvel_03-13_mneg', 'result_captainmarvel_03-13/result_captainmarvel_03-13_tf-mneg')
+
+# runProcess(c3, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mpos', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-mpos')
+# runProcess(c3, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_pos', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-pos')
+# runProcess(c3, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neu', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-neu')
+# runProcess(c3, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_neg', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-neg')
+# runProcess(c3, 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_mneg', 'result_captainmarvel_03-14_03-15/result_captainmarvel_03-14_03-15_tf-mneg')
+
+# runProcess(c3, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mpos', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-mpos')
+# runProcess(c3, 'result_captainmarvel_03-18/result_captainmarvel_03-18_pos', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-pos')
+# runProcess(c3, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neu', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-neu')
+# runProcess(c3, 'result_captainmarvel_03-18/result_captainmarvel_03-18_neg', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-neg')
+# runProcess(c3, 'result_captainmarvel_03-18/result_captainmarvel_03-18_mneg', 'result_captainmarvel_03-18/result_captainmarvel_03-18_tf-mneg')
