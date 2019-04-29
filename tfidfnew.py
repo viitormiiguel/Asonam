@@ -52,11 +52,11 @@ def runProcess(c, d, e):
             f1.write(str(nltk.pos_tag(txt)) + ',' + str(frequency[words]) + '\n')
     f1.close()
 
-# runProcess(c1, 'result_aquaman_youtube_mneg', 'tf-mneg')
-# runProcess(c1, 'result_aquaman_youtube_neg', 'tf-neg')
-# runProcess(c1, 'result_aquaman_youtube_neu', 'tf-neu')
-# runProcess(c1, 'result_aquaman_youtube_pos', 'tf-pos')
-# runProcess(c1, 'result_aquaman_youtube_mpos', 'tf-mpos')
+runProcess(c1, 'result_aquaman_youtube_mneg', 'tf-mneg')
+runProcess(c1, 'result_aquaman_youtube_neg', 'tf-neg')
+runProcess(c1, 'result_aquaman_youtube_neu', 'tf-neu')
+runProcess(c1, 'result_aquaman_youtube_pos', 'tf-pos')
+runProcess(c1, 'result_aquaman_youtube_mpos', 'tf-mpos')
 
 # runProcess(c2, 'result_aquaman_03_09/result_aquaman_03_09_mneg', 'result_aquaman_03_09/tf-mneg')
 # runProcess(c2, 'result_aquaman_03_09/result_aquaman_03_09_neg', 'result_aquaman_03_09/tf-neg')
